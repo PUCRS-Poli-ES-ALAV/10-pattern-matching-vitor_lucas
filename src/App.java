@@ -32,11 +32,9 @@ class App{
         int M = pat.length();
         int N = txt.length();
         long patHash = hash(pat, M);
-        System.out.println("txt");
         for (int i = 0; i <= N - M; i++) {
             iteComHash++;
-            System.out.println("txt");
-            //long txtHash = hash(txt.subtring(i, i+M), M);
+            long txtHash = hash(txt.substring(i, i+M), M);
             if (patHash == txtHash)
                 return i; // ocorrência? colisão?
         }
@@ -46,7 +44,7 @@ class App{
     public static long hash(String s, int M) {
         long h = 0;
         for (int j = 0; j < M; j++)
-           h = (h * R + s.charAt(j)) % Q;
+           h = (h * 32 + s.charAt(j)) % 2147483647;
         return h;
      }
 }
