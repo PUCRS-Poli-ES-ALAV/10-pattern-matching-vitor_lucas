@@ -2,11 +2,14 @@ class App{
     static int iteSemHash = 0;
     static int iteComHash = 0;
     public static void main(String[] args) {
-        String s1 = "ABCDCBDCBDACBDABDCBADF";
+        String s1 = "ABCDCBDCBDACBDABDCBABCDCBDCBDACBDABDCBABCDCBDCBDACBDABDCBABCDCBDCBDACBDABDCBABCDCBDCBDACBDABDCBABCDCBDCBDACBDABDCBABCDCBDCBDACBDABDCBABCDCBDCBDACBDABDCBABCDCBDCBDACBDABDCBABCDCBDCBDACBDABDCBADF";
         String s2 = "ADF";
 
         System.out.println("Sem Hash: " + searchOccurrence(s1, s2) + "\nIteracoes: " + iteSemHash);
         System.out.println("Com Hash: " + search(s2, s1) + "\nIteracoes: " + iteComHash);
+        KMP_String_Matching a = new KMP_String_Matching();
+        System.out.println("KMPSearch: ");
+        a.KMPSearch(s2, s1);
     }
 
     public static int searchOccurrence(String s1, String s2){
